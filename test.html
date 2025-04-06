@@ -1,0 +1,18 @@
+<script type="module">
+    const url = import.meta.env.VITE_SUPABASE_URL;
+    const key = import.meta.env.VITE_SUPABASE_ANON_KEY;
+    const table = import.meta.env.VITE_SUPABASE_TABLE;
+  
+    fetch(`${url}/rest/v1/${table}?select=*`, {
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      // Ou afficher dans la page...
+    })
+    .catch(err => console.error(err));
+  </script>
