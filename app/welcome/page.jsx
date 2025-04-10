@@ -3,35 +3,8 @@
 "use client";
 import NavBar from "../../components/NavBar";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import supabase from "../../supabaseClient";
-
 export default function Welcome() {
-  const router = useRouter();
 
-  useEffect(() => {
-    const checkSession = async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-
-      if (!session) {
-        // If no session, redirect to login
-        router.push("/login");
-      }
-    };
-    checkSession();
-  }, [router]);
-
-  const handleLogout = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (!error) {
-      router.push("/login");
-    } else {
-      console.error("Error logging out:", error.message);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gray-50 p-4">

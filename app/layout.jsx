@@ -1,24 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+
 import supabase from "../supabaseClient";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
-  const router = useRouter();
 
-  const checkSession = async () => {
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
-    if (!session) {
-      router.push("/login");
-    }
-  };
 
-  useEffect(() => {
-    checkSession();
-  }, []);
+
+
+
 
   return (
     <html lang="fr">
@@ -28,11 +18,11 @@ export default function RootLayout({ children }) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <title>Imagier</title>
-        <meta name="author" content="Imagier" />
+        <title>Lunatech</title>
+        <meta name="author" content="Lunatech" />
         <meta
           name="description"
-          content="What good is a story without a bit of illustration?"
+          content="All tech in a world that does not exist...yest!?"
         />
       </head>
       <body
