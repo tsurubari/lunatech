@@ -10,19 +10,11 @@ import { useRouter } from "next/navigation";
 const StoriesList = () => {
   const [stories, setStories] = useState([]);
   const router = useRouter();
-  0;
+  
 
   useEffect(() => {
     const fetchStories = async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
 
-      // If no session, redirect to login page
-      if (!session) {
-        router.push("/login");
-        return; // Prevent fetching stories if not logged in
-      }
 
       const { data, error } = await supabase
         .from("stories") // Ensure you have a 'stories' table
