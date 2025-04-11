@@ -45,16 +45,6 @@ const NavBar = () => {
             Print Page
           </button>
         </div>
-
-        {/* Right Logout Button */}
-        <div>
-          <button
-            onClick={handleLogout}
-            className="py-2 px-4 bg-red-600 hover:bg-red-700 rounded-md"
-          >
-            Logout
-          </button>
-        </div>
     </div>
     </nav>
   );
