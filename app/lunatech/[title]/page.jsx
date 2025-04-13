@@ -20,7 +20,7 @@ const BookPage = ({ params }) => {
       try {
       const res = await fetch(`/books/${title}.md`);
         if (!res.ok) {
-          throw new Error(`Failed to fetch the book: ${title}`);
+          throw new Error(`Failed to fetch the lunatech: ${title}`);
         }
     
         let content = await res.text();
@@ -54,7 +54,7 @@ const BookPage = ({ params }) => {
       <div>
         <NavBar />
         <div className="p-8 text-center text-red-600">
-          <h1>Book not found</h1>
+          <h1>lunatech not found</h1>
           <p>{error}</p>
         </div>
       </div>

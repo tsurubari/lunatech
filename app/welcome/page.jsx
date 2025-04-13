@@ -4,65 +4,40 @@
 import NavBar from "../../components/NavBar";
 
 export default function Welcome() {
-
-
   return (
     <div className="min-h-screen bg-gray-50 p-4">
       <NavBar />
 
       <div className="bg-white p-8 rounded-lg shadow-md">
-      <h1 className="text-3xl font-extrabold text-gray-900">
-          Welcome to the Imagier!
+        <h1 className="text-3xl font-extrabold text-gray-900">
+          Welcome to LunaTech!
         </h1>
         <p className="text-lg text-gray-700 mt-4">
-          You always have been reading wonderful stories...
+          Imagine a writer team that was willing to center their creation around
+          a single universe.
           <br />
-          Great Authors, Great Adventures.
+          A group of concept artists, illustrators, and writers who are willing
+          to share their work based on that world.
           <br />
-          But what good is a story without an illustration? <br />
-          Think about Jules Verne without Édouard Riou, Alphonse de Neuville, Léon Benett, and Jules Férat.<br />
-          Ok...here it is Bayard, agreed!
-          <iframe
-            src="https://assets.pinterest.com/ext/embed.html?id=814588651359847683"
-            height="1089"
-            width="600"
-          ></iframe>
-          Yes, you see, in your mind, and for generations, those stories had
-          always been illustrated. <br />
-          The art of the Editor has always been to combine text and image.<br />
-          For Jules it was Pierre-Jules Hetzel.
-          
+          Here is their site, you have to register, it's free. <br />
+          <a
+            href="https://supabase-next-imagier.vercel.app/"
+            className="text-blue-500 hover:underline"
+          >
+            Imagier
+          </a>
           <br />
-          Here, content creators can create illustrated stories, and share their
-          work.
+          My idea is, why not to class all those SF concepts linked to that universe.
           <br />
-          The goal is to promote and in the future remunerate creator,
+          So, I created a database of the imaginary future.
           <br />
-          illustrators, graphic designers, painters, photographers, 3d
-          artists... it's open bar!
+          This is SF and those who create this documentation are not specialists.
           <br />
+          Because, this is a lots of specialities.
           <br />
-          In the future, I will share with creators an other app made with
-          Electron that will simplify the process.
+          If you are a specialist, your advice is welcomed.
           <br />
-          You will have more control and autonomy.
-          <br />
-          Later on, I will also open this space to writers, but not yet.
-          <br />
-          For now, just share your link, we will not host it.
-          <br />
-          <br />
-          I invite you to read the stories, see where illustrations can fit, and
-          we will take care of the rest.
-          <br />
-          <br />
-          Also, this is a software hosted on github, then you can clone it.
-          <br />
-          I will add rules later on but the first one is to respect the work of
-          others.
-          <br />
-          This imply that in the future I will need to better organize the
-          public folder.
+          And also, all images are from Pinterest
         </p>
       </div>
     </div>
