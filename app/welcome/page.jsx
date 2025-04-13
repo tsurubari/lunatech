@@ -33,11 +33,7 @@ export default function Welcome() {
           <br />
           This is SF and those who create this documentation are not specialists.
           <br />
-          Because, this is a lots of specialities.
-          <br />
-          If you are a specialist, your advice is welcomed.
-          <br />
-          And also, all images are from Pinterest
+          And also, all images are from Pinterest.
         </p>
       </div>
     </div>
