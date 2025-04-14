@@ -1,13 +1,13 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import supabase from '../supabaseClient';
+"use client";
+import { useRouter } from "next/navigation";
+import supabase from "../supabaseClient";
 
 const NavBar = () => {
   const router = useRouter();
 
   const handleLogout = async () => {
-     await supabase.auth.signOut();
-    router.push('/login'); // Redirect to login page after logout
+    await supabase.auth.signOut();
+    router.push("/login"); // Redirect to login page after logout
   };
 
   return (
@@ -16,23 +16,16 @@ const NavBar = () => {
         {/* Left Navigation Links */}
         <div className="flex space-x-6">
           <button
-            onClick={() => router.push('/welcome')}
+            onClick={() => router.push("/welcome")}
             className="hover:text-gray-300"
           >
             Home
           </button>
           <button
-            onClick={() => router.push('/contact')}
+            onClick={() => router.push("/lunatech")}
             className="hover:text-gray-300"
           >
-            Contact
-          </button>
-
-          <button
-            onClick={() => router.push('/book')}
-            className="hover:text-gray-300"
-          >
-            Stories
+            Lunatech
           </button>
         </div>
 
@@ -45,7 +38,7 @@ const NavBar = () => {
             Print Page
           </button>
         </div>
-    </div>
+      </div>
     </nav>
   );
 };
