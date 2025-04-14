@@ -5,6 +5,7 @@ export default function Home() {
       <p className="mb-8 text-lg">Lets put it simply, we created a world and we  want to present the tech part</p>
       <p className="mb-8 text-lg">All pictures are from pinterest, if you want to participate contact us</p>
       <p className="mb-8 text-lg">We link also to the origin texts</p>
+      <p className="mb-8 text-lg">Help us</p>
       <div className="space-x-4">
         <a 
           href="/welcome" 
