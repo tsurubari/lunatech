@@ -31,21 +31,26 @@ const StoriesList = () => {
   }, [router]);
 
   return (
-    <div>
-      <div className="min-h-screen bg-gray-50 p-4">
+    <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 to-white">
       <NavBar />
-        <h1 className="text-3xl font-extrabold text-gray-900 text-center mb-8">
-          Luna Tech List 
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      
+      <div className="py-12 px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-12 animate-fade-in">
+          <h1 className="text-4xl font-bold text-indigo-900 mb-2 tracking-tight">
+            📚 LunaTech Library
+          </h1>
+          <p className="text-gray-600 max-w-xl mx-auto">
+            Dive into curated tech stories and guides by the community.
+          </p>
+        </div>
+  
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 animate-fade-in">
           {stories.map((story) => (
             <Link key={story.id} href={`/lunatech/${story.link}`} passHref>
-              <div className="bg-white p-4 rounded-lg shadow-md hover:bg-gray-200 transition duration-300 ease-in-out cursor-pointer">
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {story.title}
-                </h3>
-                <p className="text-gray-700 mt-2">{story.description}</p>
-                <p className="text-sm text-gray-500 mt-2">{story.type}</p>
+              <div className="bg-white hover:bg-indigo-50 border border-gray-200 rounded-2xl p-5 shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                <h3 className="text-xl font-semibold text-indigo-800">{story.title}</h3>
+                <p className="text-gray-600 mt-2 line-clamp-3">{story.description}</p>
+                <p className="text-sm text-indigo-400 mt-4 italic">{story.type}</p>
               </div>
             </Link>
           ))}
@@ -53,6 +58,7 @@ const StoriesList = () => {
       </div>
     </div>
   );
+  
 };
 
 export default StoriesList;
