@@ -16,18 +16,18 @@ const BookPage = ({ params }) => {
   useEffect(() => {
     const fetchFileContent = async () => {
       if (!title) return; // Skip if there's no title
-    
+
       try {
-      const res = await fetch(`/books/${title}.md`);
+        const res = await fetch(`/books/${title}.md`);
         if (!res.ok) {
           throw new Error(`Failed to fetch the lunatech: ${title}`);
         }
-    
+
         let content = await res.text();
-    
+
         // Remove front matter (--- key: value ---)
-        content = content.replace(/^---[\s\S]+?---\s*/, ""); 
-    
+        content = content.replace(/^---[\s\S]+?---\s*/, "");
+
         setFileContent(content);
         setLoading(false);
       } catch (err) {
@@ -35,7 +35,6 @@ const BookPage = ({ params }) => {
         setLoading(false);
       }
     };
-    
 
     fetchFileContent();
   }, [title]); // Fetch content only when the title is available
@@ -44,7 +43,10 @@ const BookPage = ({ params }) => {
     return (
       <div>
         <NavBar />
-        <div className="p-8 text-center">Loading...</div>
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900" />
+          <p className="mt-4 text-gray-600">Loading your lunatech...</p>
+        </div>
       </div>
     );
   }
@@ -66,7 +68,9 @@ const BookPage = ({ params }) => {
       <NavBar />
       <div className="p-8">
         <div className="markdown-content">
-          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{fileContent}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+            {fileContent}
+          </ReactMarkdown>
         </div>
       </div>
     </div>
