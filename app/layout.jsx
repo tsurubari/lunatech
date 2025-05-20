@@ -1,6 +1,6 @@
 "use client";
 
-import supabase from "../supabaseClient";
+
 import "./globals.css";
 
 export default function RootLayout({ children }) {

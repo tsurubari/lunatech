@@ -3,37 +3,30 @@ import NavBar from '../../components/NavBar';
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import supabase from "../../supabaseClient";
 
-import { useRouter } from "next/navigation";
 
 const StoriesList = () => {
   const [stories, setStories] = useState([]);
-  const router = useRouter();
-  
 
   useEffect(() => {
     const fetchStories = async () => {
+      try {
+        const res = await fetch("/stories.json");
+        const data = await res.json();
 
-
-      const { data, error } = await supabase
-        .from("stories") // Ensure you have a 'stories' table
-        .select("*");
-
-      if (error) {
-        console.error(error);
-      } else {
-        setStories(data.filter(story => story.status === "story")); // Filtre en front-end
+        setStories(data.filter(story => story.status === "story"));
+      } catch (error) {
+        console.error("Erreur lors du chargement des stories :", error);
       }
     };
 
     fetchStories();
-  }, [router]);
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 to-white">
       <NavBar />
-      
+
       <div className="py-12 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl font-bold text-indigo-900 mb-2 tracking-tight">
@@ -43,7 +36,7 @@ const StoriesList = () => {
             Dive into curated tech stories and guides by the community.
           </p>
         </div>
-  
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 animate-fade-in">
           {stories.map((story) => (
             <Link key={story.id} href={`/lunatech/${story.link}`} passHref>
@@ -58,7 +51,6 @@ const StoriesList = () => {
       </div>
     </div>
   );
-  
 };
 
 export default StoriesList;

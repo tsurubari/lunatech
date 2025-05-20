@@ -3,25 +3,30 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text-light: #333;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --text-light: #ccc;
   }
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
 }
 
+/* Bouton suppression */
 .delete-btn {
   background-color: red;
   color: white;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -37,78 +42,69 @@ body {
   background-color: darkred;
 }
 
-/* Global styles for centering and styling the markdown content */
+/* Contenu markdown centré */
 .markdown-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Full height of the viewport */
-  padding: 20px;
-  background-color: #f9f9f9; /* Light background for a document feel */
-  text-align: justify; /* Optional: Justify the text for a neat appearance */
+  padding: 2rem 1rem;
+  background: var(--background);
 }
 
-/* Restrict text width for better readability */
 .markdown-content > * {
   max-width: 800px;
   width: 100%;
-  font-family: 'Georgia', serif;
-  line-height: 1.8;
+  font-family: Georgia, serif;
+  color: var(--text-light);
+  text-align: justify;
 }
 
-/* Optional: Customize headings */
-.markdown-content h1 {
-  font-size: 2.5rem;
-  text-align: center; /* Center the main heading */
-  margin-bottom: 20px;
-}
-
-.markdown-content h2 {
-  font-size: 2rem;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
+/* Titres */
+.markdown-content h1,
+.markdown-content h2,
 .markdown-content h3 {
-  font-size: 1.75rem;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  text-align: center;
+  margin: 1em 0 0.5em;
 }
 
-/* Paragraph styles */
+.markdown-content h1 { font-size: 2.5rem; }
+.markdown-content h2 { font-size: 2rem; }
+.markdown-content h3 { font-size: 1.5rem; }
+
+/* Paragraphes */
 .markdown-content p {
-  margin-bottom: 15px;
-  font-size: 20px;
-  color: #333;
+  margin-bottom: 1em;
+  font-size: 18px;
 }
 
-/* Optional: Styling for blockquotes */
-.markdown-content blockquote {
-  border-left: 4px solid #ccc;
-  padding-left: 15px;
-  margin: 20px 0;
-  color: #555;
-}
-
-/* Lists */
+/* Listes */
 .markdown-content ul,
 .markdown-content ol {
-  margin: 15px 0;
-  padding-left: 40px;
+  margin: 1em 0;
+  padding-left: 2em;
 }
 
+/* Citations */
+.markdown-content blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1em;
+  color: var(--text-light);
+  margin: 1.5em 0;
+}
+
+/* Iframe */
 .markdown-content iframe {
   display: block;
-  margin: 1.5em 0;
+  margin: 2em auto;
 }
 
 @media print {
   iframe {
-    display: none !important; /* Hide all iframes during printing */
+    display: none !important;
   }
 }
 
+/* Animation simple */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -116,5 +112,3 @@ body {
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out both;
 }
-
-
