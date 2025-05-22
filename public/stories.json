@@ -1,0 +1,38 @@
+[
+  {
+    "id": "techexample",
+    "title": "techexample",
+    "description": "Bon, c'est le template mais je veux voir ce que ça donne donc provisoirement fragment",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "techexample",
+    "filename": "techexample.md"
+  },
+  {
+    "id": "template",
+    "title": "template",
+    "description": "Bon, c'est le template mais je veux voir ce que ça donne donc provisoirement fragment",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "template",
+    "filename": "template.md"
+  },
+  {
+    "id": "template2",
+    "title": "template2",
+    "description": "Bon, test",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "template2",
+    "filename": "template2.md"
+  },
+  {
+    "id": "vraicopy",
+    "title": "vraicopy",
+    "description": "Bon, test",
+    "type": "SF Futuristique",
+    "status": "story",
+    "link": "vraicopy",
+    "filename": "vraicopy.md"
+  }
+]
